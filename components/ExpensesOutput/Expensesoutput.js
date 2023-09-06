@@ -1,12 +1,16 @@
 import React from 'react'
-import { Text,View } from 'react-native'
+import { Text,View,FlatList } from 'react-native'
+import ExpensesSummary from './ExpensesSummary'
+import ExpensesList from './ExpensesList'
 
-const Expensesoutput = ({expenses}) => {
+const ExpensesOutput = ({expenses}) => {
   return (
     <View>
-        <Text></Text>
+        <ExpensesSummary />
+
+        <ExpensesList />
     </View>
   )
 }
 
-export default Expensesoutput
+export default ExpensesOutput

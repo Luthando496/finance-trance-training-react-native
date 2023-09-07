@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native'
 
 
 
-const ExpenseItem = ({title,amount,date}) => {
+const ExpenseItem = ({title,amount,date,id}) => {
     let navigation = useNavigation()
 
     const expensePressHandler =()=>{
-        navigation.navigate('ManageExpense',{title:title,amount:amount})
+        navigation.navigate('ManageExpense',{exID:id})
     }
 
   return (

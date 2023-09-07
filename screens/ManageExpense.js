@@ -1,5 +1,8 @@
 import React, { useLayoutEffect } from 'react'
 import { Text, View } from 'react-native'
+import CustomBTN from '../UI/CustomBTN'
+
+
 
 const ManageExpense = ({route,navigation}) => {
   const expenseID = route.params?.exID
@@ -14,8 +17,10 @@ const ManageExpense = ({route,navigation}) => {
 
 
   return (
-    <View>
-        <Text>ManageExpense</Text>
+    <View className='flex-1 p-4 bg-purple-700'>
+        {isEditing && (<View className='mt-6 pt-3 border-t-2 border-t-teal-300 items-center'>
+        <CustomBTN name='trash' size={30} color='red' onPress={() => {}} />
+        </View>)}
     </View>
   )
 }

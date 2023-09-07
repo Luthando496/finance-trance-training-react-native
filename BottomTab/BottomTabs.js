@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import RecentExpense from '../screens/RecentExpense';
 import AllExpense from '../screens/AllExpense';
 import {Ionicons} from '@expo/vector-icons';
+import CustomBTN from '../UI/CustomBTN';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,10 @@ function BottomTabs() {
             backgroundColor: '#DC143C'
         },
         tabBarActiveTintColor: '#BDB76B',
-        tabBarInactiveTintColor: '#ffff'
+        tabBarInactiveTintColor: '#ffff',
+        headerRight: ({tintColor}) => (
+          <CustomBTN name='add' size={38} color={tintColor} onPress={()=>{}} />
+        )
 
     }}>
       <Tab.Screen options={{

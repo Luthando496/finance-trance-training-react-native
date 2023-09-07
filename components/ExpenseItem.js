@@ -5,8 +5,12 @@ import { getFormatedDate } from '../Util/date'
 
 const ExpenseItem = ({title,amount,date}) => {
 
+    const expensePressHandler =()=>{
+
+    }
+
   return (
-    <Pressable>
+    <Pressable  style={({pressed})=> pressed && styles.pressed} onPress={expensePressHandler}>
         <View className='p-4 my-5 bg-indigo-500 flex-row justify-between rounded-lg shadow-2xl'>
             <View><Text className='text-white font-semibold text-base'>{title}</Text><Text className='mt-2 text-white font-bold' >{getFormatedDate(date)}</Text></View>
             
@@ -19,8 +23,9 @@ const ExpenseItem = ({title,amount,date}) => {
 }
 
 const styles = StyleSheet.create({
-    expenseItem:{
-
+    pressed:{
+        opacity: 0.4,
+        transform: 'translateY(5px)',
     }
 })
 

@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
   return (
-    <Tab.Navigator screenOptions={{
+    <Tab.Navigator screenOptions={({navigation,route})=>({
         headerStyle:{
             backgroundColor: '#DC143C'
         },
@@ -19,10 +19,12 @@ function BottomTabs() {
         tabBarActiveTintColor: '#BDB76B',
         tabBarInactiveTintColor: '#ffff',
         headerRight: ({tintColor}) => (
-          <CustomBTN name='add' size={38} color={tintColor} onPress={()=>{}} />
+          <CustomBTN name='add' size={38} color={tintColor} onPress={()=>{
+            navigation.navigate('ManageExpense')
+          }} />
         )
 
-    }}>
+    })}>
       <Tab.Screen options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="hourglass" size={size} color={color} />
